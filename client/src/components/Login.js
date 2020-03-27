@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import './Login.css';
 
 export const Login = (props) => {
   // handle submit function and set state w/ useState ... confirm protects
@@ -23,35 +24,35 @@ export const Login = (props) => {
   }
 
   return(
-    <>
-    <h1>Welcome to the Bubble App!</h1>
-      <form onSubmit={handleSubmit}>
-      <input
-          name='username'
-          type='text'
-          placeholder='User name'
-          value={form.username}
-          onChange={(event) => {
-              setForm({
-                  ...form,
-                  [event.target.name]:event.target.value
-              })
-          }}
-          />
-      <input
-          name='password'
-          type='password'
-          placeholder='Password'
-          value={form.password}
-          onChange={(event) => {
-              setForm({
-                  ...form,
-                  [event.target.name]:event.target.value
-              })
-          }}
-          />
-          <button type='submit'>Submit</button>
-      </form>
-      </>
+    <div className='app-cont'>
+      <h1>Welcome to the Bubble App!</h1>
+        <form className="form-1" onSubmit={handleSubmit}>
+        <input
+            name='username'
+            type='text'
+            placeholder='User name'
+            value={form.username}
+            onChange={(event) => {
+                setForm({
+                    ...form,
+                    [event.target.name]:event.target.value
+                })
+            }}
+            />
+        <input
+            name='password'
+            type='password'
+            placeholder='Password'
+            value={form.password}
+            onChange={(event) => {
+                setForm({
+                    ...form,
+                    [event.target.name]:event.target.value
+                })
+            }}
+            />
+            <button type='submit'>Submit</button>
+        </form>
+      </div>
   )
 }
